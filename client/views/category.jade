@@ -1,0 +1,14 @@
+template(name="category")
+  if editing
+    form(class="form-edit")
+      input(name="name" type="text" value="#{name}")
+      button(type="submit") Submit
+      a(class="cancel" href="#") Cancel
+  else
+    h2 #{name}
+    a(href="#" class="edit") edit category
+    | &nbsp;|&nbsp;
+    a(href="#" class="remove") delete category
+
+  ul
+    +products(my_products=products)

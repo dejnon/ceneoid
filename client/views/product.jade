@@ -1,0 +1,12 @@
+template(name="product")
+  if editing
+    form(class="form-edit")
+      input(name="name" type="text" value="#{name}")
+      button(type="submit") Submit
+      a(class="cancel" href="#") Cancel
+  else
+    p 
+      | #{name}
+      a(href="#" class="edit") edit product
+      | &nbsp;|&nbsp;
+      a(href="#" class="remove") delete product
