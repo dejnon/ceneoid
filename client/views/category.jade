@@ -1,14 +1,30 @@
 template(name="category")
-  if editing
-    form(class="form-edit")
-      input(name="name" type="text" value="#{name}")
-      button(type="submit") Submit
-      a(class="cancel" href="#") Cancel
-  else
-    h2 #{name}
-    a(href="#" class="edit") edit category
-    | &nbsp;|&nbsp;
-    a(href="#" class="remove") delete category
+  //- if editing
+  //-   form(class="form-edit")
+  //-     input(name="name" type="text" value="#{name}")
+  //-     button(type="submit") Submit
+  //-     a(class="cancel" href="#") Cancel
+  //- else
+  //-   h2 #{name}
+  //-   a(href="#" class="edit") edit category
+  //-   | &nbsp;|&nbsp;
+  //-   a(href="#" class="remove") delete category
+  //-   | &nbsp;|&nbsp;
 
-  ul
-    +products(my_products=products)
+  //- if addproduct
+  //-   form(class="product-form-create")
+  //-     input(name="name" type="text")
+  //-     hidden(name="category_id" value="#{_id}")
+  //-     button(type="submit") Submit
+  //-     a(class="cancel" href="#") Cancel
+  //- else
+  //-   a(class="product-create" href="#") add product
+
+  //- ul
+  //-   +products(my_products=categoryproducts)
+  .col-sm-4.portfolio-item
+    a.portfolio-link.category-link.page-scroll(href='#', data-toggle='modal')
+      .caption
+        .caption-content
+          p #{name}              
+      img.img-responsive(src="img/#{image}", alt='')

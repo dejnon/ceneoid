@@ -1,14 +1,25 @@
 template(name="products")
-  h3 Products
-  if products_creating
-    form(class="products-form-create")
-      input(name="products-name" type="text")
-      button(type="products-submit") Submit
-      a(class="products-cancel" href="#") Cancel
-  else
-    a(class="products-create" href="#") Create
+  //- h3 Products
+  //- if productscreating
+  //-   form(class="products-form-create")
+  //-     input(name="products-name" type="text")
+  //-     button(type="products-submit") Submit
+  //-     a(class="products-cancel" href="#") Cancel
+  //- else
+  //-   a(class="products-create" href="#") Create
  
-  ul
-    each my_products
-      li
-        +product
+  //- ul
+  //-   each my_products
+  //-     li
+  //-       +product
+  if currentcategory
+    .container
+      .row
+        .col-lg-12.text-center
+          h2 #{currentcategory.name}
+          hr.star-light         
+      .row
+        ul
+          each currentcategory.products
+            li 
+              +product

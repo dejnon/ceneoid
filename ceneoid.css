@@ -1,1 +1,12 @@
 /* CSS declarations go here */
+.navbar .navbar-default {
+  margin-bottom: 0;
+}
+
+.product-item a {
+  color: #ccc;
+}
+
+.form-product-review input {
+  color: #333;
+}

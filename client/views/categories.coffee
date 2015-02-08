@@ -9,7 +9,12 @@ Template.categories.events
  
   "submit form.form-create": (e, tpl) ->
     e.preventDefault()
-    category_name = {name: tpl.$("input[name='name']").val()}
+    category_name = 
+      name: tpl.$("input[name='name']").val()
     if category_name.name.length
       Categories.insert category_name
       Session.set 'creating', false
+
+  "click .cancel": (e, tpl) ->
+    e.preventDefault()
+    Session.set('creating', null)
