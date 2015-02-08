@@ -1,0 +1,9 @@
+template(name="review")
+  p #{content}
+  div(class="rateit" 
+      data-rateit-value="#{rating}" 
+      data-rateit-ispreset="true"
+      data-rateit-readonly="true"
+      data-rateit-step="1"
+      data-rateit-min="1"
+      data-rateit-max="6")

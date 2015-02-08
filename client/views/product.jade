@@ -1,32 +1,26 @@
 template(name="product")
-  //- if editing
-  //-   form(class="form-edit")
-  //-     input(name="name" type="text" value="#{name}")
-  //-     button(type="submit") Submit
-  //-     a(class="cancel" href="#") Cancel
-  //- else
-  //-   p 
-  //-     | #{name}
-  //-     a(href="#" class="edit") edit product
-  //-     | &nbsp;|&nbsp;
-  //-     a(href="#" class="remove") delete product
   .product-item 
     | #{name}
     if reviews
       ul.reviews
         each reviews
-          p #{content}
-          div(class="rateit" data-rateit-value="2" data-rateit-ispreset="true" data-rateit-readonly="true")
+          +review
 
     if reviewing
       form(class="form-product-review")
         input(name="review" type="textarea" value="Write your review here")
-        script.
-          $('.rateit').rateit();
-        input(type="range" value="1" min="0" max="5" step="1" id="backing4")
-        div(class="rateit" data-rateit-backingfld="#backing4" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5")
+        div(class="rateit" 
+            id="rating"
+            data-rateit-resetable="false" 
+            data-rateit-ispreset="true"
+            data-rateit-value="1"
+            data-rateit-step="1"
+            data-rateit-min="1"
+            data-rateit-max="6")
         button(type="submit") Submit
         a(class="cancel" href="#") Cancel
+        script.
+          $('.rateit').rateit();
     else
       p
         a(href="#" class="product-comment") + add comment

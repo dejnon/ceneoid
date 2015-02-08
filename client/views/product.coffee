@@ -37,7 +37,6 @@ Template.product.events
     category = Session.get 'currentcategory'
     review = tpl.$("input[name='review']").val()
     rating = tpl.$('#rating').rateit('value')
-    console.log rating
-    if review.length && category
-      Meteor.call('createReview', category, @_id, review, 1)
+    if review.length && rating && category
+      Meteor.call('createReview', category, @_id, review, rating)
       Session.set('reviewing', null)
