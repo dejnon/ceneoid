@@ -9,3 +9,6 @@ coffeescript
 mizzao:bootstrap-3
 insecure
 mquandalle:jade
+aldeed:autoform
+aldeed:collection2
+dandv:jquery-rateit
