@@ -1,0 +1,1 @@
+@Retailers = new Mongo.Collection('retailers')

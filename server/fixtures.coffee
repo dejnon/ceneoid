@@ -55,3 +55,30 @@ if Categories.find().count() == 0
       product.category_id = category._id
       Products.insert(product)
 
+if Retailers.find().count() == 0
+  _([
+    {
+      name: 'Agitowo'
+      _id: 'agitowo'
+      products: [
+        {name: 'Lake house', _id: "1"}
+        {name: 'Steel door', _id: "10"} ]
+    }, {
+      name: 'Morelowo'
+      _id: 'morelowo'
+      products: [
+        {name: 'Diving suit', _id: "5"}
+        {name: 'Diving tube', _id: "6"}
+        {name: 'Serious Sami', _id: "8"}
+        {name: 'Escargot', _id: "4"} ]
+    }, {
+      name: 'ZKom'
+      _id: 'zkom'
+      products: [
+        {name: 'Lake house', _id: "1"}
+        {name: 'Diving tube', _id: "6"}
+        {name: 'Safe', _id: "11"}
+        {name: 'Car', _id: "12"} ]
+    }
+  ]).each (retailer) -> Retailers.insert(retailer)
+
