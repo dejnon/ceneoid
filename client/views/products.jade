@@ -1,21 +1,19 @@
 template(name="products")
-  if currentcategory
-    .row
-      .col-lg-12.text-center
+  .row
+    .col-lg-12.text-center
+      if currentcategory
         h2 #{currentcategory.name}
-        hr.star-light 
-    .row        
-      ul
-        each currentcategory.products
+      else
+        h2 Products
+      hr.star-light
+      a(class="sort" href="#") Sort by rating #{sortorder}
+  .row        
+    ul
+      if currentcategory
+        each categoryproducts
           li 
             +product
-  else
-    .row
-      .col-lg-12.text-center
-        h2 Products
-        hr.star-light
-    .row
-      ul
+      else
         each allproducts
           li
             +product

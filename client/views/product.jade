@@ -1,10 +1,26 @@
 template(name="product")
   .product-item 
     h2 #{name}
-    if reviews
-      ul.reviews
-        each reviews
-          +review
+    if showreviews
+      if reviews
+        h3 Average rating #{averageratingsmall}
+        div(class="rateit" 
+          data-rateit-value="#{averageratingint}" 
+          data-rateit-ispreset="true"
+          data-rateit-readonly="true"
+          data-rateit-step="1"
+          data-rateit-min="1"
+          data-rateit-max="6")
+        ul.reviews
+          each productreviews
+            +review
+        a(href="#" class="product-hide-comments") &#x25B2; hide comments
+    else
+      if reviews
+        p
+          a(href="#" class="product-show-comments") &#x25BC; show comments
+      else
+        p No reviews yet
 
     if reviewing
       form(class="form-product-review")
