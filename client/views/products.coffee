@@ -29,3 +29,7 @@ Template.products.events
       when 'ASC'  then Session.set('sortorder', 'DESC')
       when 'DESC' then Session.set('sortorder', 'ASC')
       else Session.set('sortorder', 'ASC')
+
+  "click .remove-category": (e, tpl) ->
+    e.preventDefault()
+    Session.set('currentcategory', null)
