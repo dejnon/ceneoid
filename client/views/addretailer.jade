@@ -5,15 +5,13 @@ template(name="addretailer")
       hr.star-light
 
   .highlight
-    form.form-inline
+    form.form-inline.form-create
       .form-group
-        label('name')
-        input#inputname.form-control(type='text', placeholder='retailer name')
-
-      .form-group              
-        select.form-control(placeholder='choose category')
-          each categories
-            option #{name}
+        label(for='inputname')
+        input#inputname.form-control(
+          name='name',
+          type='text', 
+          placeholder='retailer name')
     
       button.btn.btn-success(type="submit") 
         .glyphicon.glyphicon-plus ADD RETAILER
