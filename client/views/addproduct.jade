@@ -20,12 +20,14 @@ template(name="addproduct")
           name='category_id')
           each categories
             option(value='#{_id}') #{name}
-    
+      
       button.btn.btn-success(type="submit") 
         .glyphicon.glyphicon-plus ADD PRODUCT
 
-      .form-group
-        input#photo.btn(type='file')
+      +upload_bootstrap(
+        fileTypes='.jpg,.png'
+        contentType='images'
+        multiple=false)
 
 
 

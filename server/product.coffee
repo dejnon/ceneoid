@@ -1,7 +1,7 @@
 Meteor.methods
-  addProduct: (name, category_id) -> 
+  addProduct: (name, category_id, filename) -> 
     product_id = 
-      Products.insert({name: name, category_id: category_id })
+      Products.insert({name: name, category_id: category_id, image: filename })
     Meteor.call('addProductToCategory', product_id, category_id)
 
   addProductToCategory: (product_id, category_id) ->

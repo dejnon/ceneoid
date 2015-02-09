@@ -1,6 +1,7 @@
 template(name="product")
   .product-item 
     h2 #{name}
+    img(src="#{image}")
     if showreviews
       if reviews
         h3 Average rating #{averageratingsmall}
