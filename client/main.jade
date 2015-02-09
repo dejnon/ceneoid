@@ -30,13 +30,13 @@ body
               a(href='#page-top')
             |                     
             li.page-scroll
-              a(href='#portfolio') Portfolio
+              a(href='#portfolio') Categories
             |                     
             li.page-scroll
-              a(href='#about') About
+              a(href='#products') Products
             |                     
             li.page-scroll
-              a(href='#contact') Contact
+              a(href='#addproduct') Add product
 
     header
       .container
@@ -44,6 +44,7 @@ body
           .col-lg-12
             .intro-text
               span.name Vallkomen till Ceneoid
+              img.img-responsive(src="img/happy.png", alt='')
               |                         
               hr.star-light
               |                         
@@ -71,13 +72,27 @@ body
       .container
         .row
           .col-lg-12.text-center
-            h2 Retailers
-            |                     
+            h2 Retailers       
             hr.star-primary
-        |             
         .row
           p hello
 
+    section#addproduct.success
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Add new product!          
+            hr.star-light
+        .row
+          p dupa
+            //- form.form-inline
+            //-   .form-group
+            //-   label#inputname('name')
+            //-   input#inputname.form-control(type='text', placeholder='Kundel Bury')
+            //-   .form-group
+            //-   label#inputcategory('category')
+            //-   input#inputcategory.form-control(type='text', placeholder='Kundel Bury')
+            //-   button.btn-default(type="submit") Submit
 
     // Footer
     footer.text-center
@@ -88,12 +103,12 @@ body
               h3 Location
               |                         
               p
-                | 3481 Melrose Place
+                | Historiegrand 6A
                 br
-                | Beverly Hills, CA 90210
+                | SE-90734 Umea
             |                     
             .footer-col.col-md-4
-              h3 Around the Web
+              h3 Find us
               |                         
               ul.list-inline
                 li
@@ -111,24 +126,20 @@ body
                 li
                   a.btn-social.btn-outline(href='#')
                     i.fa.fa-fw.fa-linkedin
-                |                             
-                li
-                  a.btn-social.btn-outline(href='#')
-                    i.fa.fa-fw.fa-dribbble
             |                     
             .footer-col.col-md-4
-              h3 About Freelancer
+              h3 About
               |                         
               p
-                | Freelance is a free to use, open source Bootstrap theme created by 
-                a(href='http://startbootstrap.com') Start Bootstrap
-                | .
+                | Service is a part of Assignment 1 <br>
+                | in course Cloud Computing <br>
+                | at Umea University.
       |         
       .footer-below
         .container
           .row
             .col-lg-12
-              | Copyright &copy; Your Website 2014
+              | Copyright &copy; Marta & Daniel 2015
     // Scroll to Top Button (Only visible on small and extra-small screen sizes)
     .scroll-top.page-scroll.visible-xs.visble-sm
       a.btn.btn-primary(href='#page-top')
