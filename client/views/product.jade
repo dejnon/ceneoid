@@ -15,12 +15,25 @@ template(name="product")
           each productreviews
             +review
         a(href="#" class="product-hide-comments") &#x25B2; hide comments
+    else if showretailers
+      if productretailers
+        ul.retailers
+          each productretailers
+            li
+              p #{name} - #{price}
+        a(href="#" class="product-hide-retailers") &#x25B2; hide retailers
     else
       if reviews
         p
           a(href="#" class="product-show-comments") &#x25BC; show comments
       else
         p No reviews yet
+
+      if retailers
+        p
+          a(href="#" class="product-show-retailers") &#x25BC; show retailers
+      else
+        p No retailers yet
 
     if reviewing
       form(class="form-product-review")
@@ -37,6 +50,16 @@ template(name="product")
         a(class="cancel" href="#") Cancel
         script.
           $('.rateit').rateit();
+    else if assigning
+      form(class="form-product-assign")
+        input(name="price" type="textarea" value="Price")
+        select(name="retailer")
+          each retailers
+            option(value="#{_id}") #{name}
+        button(type="submit") Submit
+        a(class="cancel" href="#") Cancel
     else
       p
         a(href="#" class="product-comment") + add comment
+        | |
+        a(href="#" class="product-retailer") + assign to retailer
