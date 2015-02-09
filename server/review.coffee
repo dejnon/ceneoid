@@ -1,7 +1,7 @@
 Meteor.methods
   createReview: (product_id, review_content, rating) -> 
     selector = { '_id': product_id }
-    review   = { content: review_content, rating: rating }
+    review   = { content: review_content, rating: rating-1 }
     setter   = { $addToSet: { 'reviews': review } }
     Products.update(selector, setter)
     Meteor.call('updateRating', product_id)

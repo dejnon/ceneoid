@@ -3,7 +3,8 @@ template(name="product")
     .product-item
       .col-md-4
         h2 #{name}
-        img.img-responsive(src="img/happy.png", alt='')
+        if image
+          img(src="#{image}" width="300px" height="auto")
       .col-md-8
         if showreviews
           if reviews

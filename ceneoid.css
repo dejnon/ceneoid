@@ -11,6 +11,10 @@
   color: #2c3e50;
 }
 
+.products a.remove-category {
+  color: #2c3e50;
+}
+
 .form-product-review input {
   color: #333;
 }

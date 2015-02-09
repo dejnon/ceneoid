@@ -7,6 +7,9 @@ template(name="products")
         h2 Products
       hr.star-light
       a(class="sort" href="#") Sort by rating #{sortorder}
+      if currentcategory
+        | | 
+        a(class="remove-category" href="#") Unselect category
   .row        
     ul.list-unstyled
       if currentcategory

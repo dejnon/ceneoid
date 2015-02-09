@@ -68,6 +68,7 @@ if Retailers.find().count() == 0
       _id: 'zkom'
     }
   ]).each (retailer) -> Retailers.insert(retailer)
+  
   Meteor.call('addRetailerToProduct', '8',  '696', 'agitowo')
   Meteor.call('addRetailerToProduct', '10', '696', 'morelowo')
   Meteor.call('addRetailerToProduct', '10', '697', 'zkom')

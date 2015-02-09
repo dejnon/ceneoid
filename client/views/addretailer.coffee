@@ -1,7 +1,7 @@
-Template.addretailer.helpers
-  categories: -> Categories.find()
-     
-Template.addproduct.events
-  "click .edit": (e, tpl) ->
+Template.addretailer.events
+  "submit form.form-create": (e, tpl) ->
     e.preventDefault()
-    Session.set('editing', @_id)
+    name = tpl.$("input[name='name']").val()
+    if name.length
+      Retailers.insert({name: name})
+
