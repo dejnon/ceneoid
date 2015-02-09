@@ -1,0 +1,24 @@
+template(name="addpretailer")
+  .row
+    .col-lg-12.text-center
+      h2 Add new retailer!          
+      hr.star-light
+
+  .highlight
+    form.form-inline
+      .form-group
+        label('name')
+        input#inputname.form-control(type='text', placeholder='retailer name')
+
+      .form-group              
+        select.form-control(placeholder='choose category')
+          each categories
+            option #{name}
+    
+      button.btn.btn-success(type="submit") 
+        .glyphicon.glyphicon-plus ADD RETAILER
+
+
+
+
+  

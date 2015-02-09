@@ -79,21 +79,12 @@ body
 
     section#addproduct.success
       .container
-        .row
-          .col-lg-12.text-center
-            h2 Add new product!          
-            hr.star-light
-        .row
-          p dupa
-            //- form.form-inline
-            //-   .form-group
-            //-   label#inputname('name')
-            //-   input#inputname.form-control(type='text', placeholder='Kundel Bury')
-            //-   .form-group
-            //-   label#inputcategory('category')
-            //-   input#inputcategory.form-control(type='text', placeholder='Kundel Bury')
-            //-   button.btn-default(type="submit") Submit
+          +addproduct
 
+    section#addretailer.success
+      .container
+          +addretailer
+          
     // Footer
     footer.text-center
       .footer-above
