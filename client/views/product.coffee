@@ -7,6 +7,8 @@ Template.product.helpers
   showreviews: -> Session.get('showreviews') == @_id
   showretailers: -> Session.get('showretailers') == @_id
   productretailers: -> _(@retailers).sort('price') if @retailers
+  retailers: -> Retailers.find()
+
   productreviews: ->
     order = 
       switch Session.get 'sortorder'

@@ -1,65 +1,74 @@
 template(name="product")
-  .product-item 
-    h2 #{name}
-    if showreviews
-      if reviews
-        h3 Average rating #{averageratingsmall}
-        div(class="rateit" 
-          data-rateit-value="#{averageratingint}" 
-          data-rateit-ispreset="true"
-          data-rateit-readonly="true"
-          data-rateit-step="1"
-          data-rateit-min="1"
-          data-rateit-max="6")
-        ul.reviews
-          each productreviews
-            +review
-        a(href="#" class="product-hide-comments") &#x25B2; hide comments
-    else if showretailers
-      if productretailers
-        ul.retailers
-          each productretailers
-            li
-              p #{name} - #{price}
-        a(href="#" class="product-hide-retailers") &#x25B2; hide retailers
-    else
-      if reviews
-        p
-          a(href="#" class="product-show-comments") &#x25BC; show comments
-      else
-        p No reviews yet
+  .row
+    .product-item
+      .col-md-4
+        h2 #{name}
+        img.img-responsive(src="img/happy.png", alt='')
+      .col-md-8
+        if showreviews
+          if reviews
+            h3 Average rating #{averageratingsmall}
+            .rateit(
+              data-rateit-value="#{averageratingint}" 
+              data-rateit-ispreset="true"
+              data-rateit-readonly="true"
+              data-rateit-step="1"
+              data-rateit-min="1"
+              data-rateit-max="6")
+            ul.reviews
+              each productreviews
+                +review
+            a(href="#" class="product-hide-comments") &#x25B2; hide comments
+        else if showretailers
+          if productretailers
+            ul.retailers
+              each productretailers
+                li
+                  p #{name} - #{price}
+            a(href="#" class="product-hide-retailers") &#x25B2; hide retailers
+        else
+          if reviews
+            p
+              a(href="#" class="product-show-comments") &#x25BC; show comments
+          else
+            em No reviews yet
 
-      if retailers
-        p
-          a(href="#" class="product-show-retailers") &#x25BC; show retailers
-      else
-        p No retailers yet
+          if retailers
+            p
+              a(href="#" class="product-show-retailers") &#x25BC; show retailers
+          else
+            em No retailers yet
 
-    if reviewing
-      form(class="form-product-review")
-        input(name="review" type="textarea" value="Write your review here")
-        div(class="rateit" 
-            id="rating"
-            data-rateit-resetable="false" 
-            data-rateit-ispreset="true"
-            data-rateit-value="1"
-            data-rateit-step="1"
-            data-rateit-min="1"
-            data-rateit-max="6")
-        button(type="submit") Submit
-        a(class="cancel" href="#") Cancel
-        script.
-          $('.rateit').rateit();
-    else if assigning
-      form(class="form-product-assign")
-        input(name="price" type="textarea" value="Price")
-        select(name="retailer")
-          each retailers
-            option(value="#{_id}") #{name}
-        button(type="submit") Submit
-        a(class="cancel" href="#") Cancel
-    else
-      p
-        a(href="#" class="product-comment") + add comment
-        | |
-        a(href="#" class="product-retailer") + assign to retailer
+        if reviewing
+          .highlight
+            form.form-product-review.form-inline
+              .form-group
+                input.form-control(name="review" type="textarea" placeholder="Write your review here")
+                .rateit(
+                  id="rating"
+                  data-rateit-resetable="false" 
+                  data-rateit-ispreset="true"
+                  data-rateit-value="1"
+                  data-rateit-step="1"
+                  data-rateit-min="1"
+                  data-rateit-max="6")
+              button.btn.btn-success(type="submit") Submit
+              button.btn.btn-danger.cancel(type="cancel") Cancel
+              script.
+                $('.rateit').rateit();
+        else if assigning
+          .highlight
+            form.form-inline.form-product-assign
+              .form-group
+                input.form-control(name="price" type="textarea" placeholder="Price")
+              .form-group              
+                select.form-control
+                  each retailers
+                    option #{name}  
+              button.btn.btn-success(type="submit") Submit
+              button.btn.btn-danger.cancel(type="cancel") Cancel
+        else
+          .form-group
+            button.product-comment.btn.btn-info add comment
+            button.product-retailer.btn.btn-info assign to retailer
+      .clearfix
