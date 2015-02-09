@@ -7,6 +7,10 @@
   color: #ccc;
 }
 
+.products a.sort {
+  color: #2c3e50;
+}
+
 .form-product-review input {
   color: #333;
 }
