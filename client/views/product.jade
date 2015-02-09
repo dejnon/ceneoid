@@ -14,8 +14,10 @@ template(name="product")
               data-rateit-ispreset="true"
               data-rateit-readonly="true"
               data-rateit-step="1"
-              data-rateit-min="1"
-              data-rateit-max="6")
+              data-rateit-min="0"
+              data-rateit-max="5")
+            script.
+              $('.rateit').rateit();
             ul.reviews
               each productreviews
                 +review
@@ -63,9 +65,9 @@ template(name="product")
               .form-group
                 input.form-control(name="price" type="textarea" placeholder="Price")
               .form-group              
-                select.form-control
+                select.form-control(name="retailer_id")
                   each retailers
-                    option #{name}  
+                    option(value="#{_id}") #{name}  
               button.btn.btn-success(type="submit") Submit
               button.btn.btn-danger.cancel(type="cancel") Cancel
         else

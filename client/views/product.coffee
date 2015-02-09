@@ -38,10 +38,10 @@ Template.product.events
   "submit form.form-product-assign": (e, tpl) ->
     e.preventDefault()
     price    = tpl.$("input[name='price']").val()
-    retailer = tpl.$("select[name='retailer']").val()
+    retailer = tpl.$("select[name='retailer_id']").val()
     console.log price
     console.log retailer
-    if price.length && retailer.length
+    if price.length && retailer
       Meteor.call('addRetailerToProduct', @_id, price, retailer)
       Session.set('assigning', null)
       Session.set('showretailers', @_id)
