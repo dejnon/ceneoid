@@ -4,27 +4,30 @@ template(name="addproduct")
       h2 Add new product!          
       hr.star-light
 
-  .highlight
+  .row
     form.form-inline.form-create
-      .form-group
-        label(for='name')
-        input#inputname.form-control(
-          name='name',
-          type='text', 
-          placeholder='product name')
+      .col-md-6.col-md-offset-3.highlight
+        .row
+          .col-md-9.margin10
+            input#inputname.form-control(
+              name='name',
+              type='text', 
+              placeholder='product name')
+     
+            select.form-control(
+              placeholder='choose category',
+              name='category_id')
+              each categories
+                option(value='#{_id}') #{name}     
 
-      .form-group          
-        label(for='category_id')    
-        select.form-control(
-          placeholder='choose category',
-          name='category_id')
-          each categories
-            option(value='#{_id}') #{name}
-      
-      button.btn.btn-success(type="submit") 
-        .glyphicon.glyphicon-plus ADD PRODUCT
+        .row        
+          .col-md-9.margin10
+            +upload_bootstrap(
+              fileTypes='.jpg,.png'
+              contentType='images'
+              multiple=false)
+        .row        
+          .col-md-9.margin10
+            button.btn.btn-success(type="submit") add product
 
-      +upload_bootstrap(
-        fileTypes='.jpg,.png'
-        contentType='images'
-        multiple=false)
+

@@ -36,10 +36,10 @@ body
               a(href='#products') Products
             |                     
             li.page-scroll
-              a(href='#addproduct') Add product
+              a(href='#addproduct') Add product or retailer
 
     header
-      .container
+      .container(padding-top="10px !important")
         .row
           .col-lg-12
             .intro-text
@@ -47,11 +47,6 @@ body
               img.img-responsive(src="img/happy.png", alt='')
               |                         
               hr.star-light
-              |                         
-              form#contactForm(name='sentMessage', novalidate='')
-                .row.control-group
-                  .form-group.col-xs-12.controls
-                    input#name.form-control(type='text', placeholder='Ex. Volkswagen Golf')
 
     section#portfolio
       .container

@@ -18,3 +18,14 @@
 .form-product-review input {
   color: #333;
 }
+
+.margintop {
+    margin-top: 50px;
+}
+
+.margin10 {
+    margin: 10px 0px;
+}
+.progressInner {
+	width: 300px !important;
+}
