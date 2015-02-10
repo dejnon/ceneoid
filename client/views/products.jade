@@ -6,10 +6,10 @@ template(name="products")
       else
         h2 Products
       hr.star-light
-      a.btn.btn-default.sort Sort by: rating #{sortorder}
+      a.btn.btn-warning.btn-lg.sort Sort by rating #{sortorder}
       if currentcategory
         | | 
-        a(class="remove-category" href="#") Unselect category
+        a.btn.btn-warning.btn-lg.sort(class="remove-category" href="#") Unselect category
   .row    
     ul.list-unstyled
       if currentcategory
