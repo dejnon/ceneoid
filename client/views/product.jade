@@ -24,26 +24,36 @@ template(name="product")
               ul.reviews
                 each productreviews
                   +review
-              a(href="#" class="product-hide-comments") &#x25B2; hide comments
+              p
+                a.btn.btn-default.width150(href="#" class="product-hide-comments") &#x25B2; hide comments
+
           else if showretailers
             if productretailers
-              ul.retailers
+              .row
+                .col-md-3.h3.strong RETAILER
+                .col-md-3.h3.strong PRICE
+              ul.retailers.list-unstyled
                 each productretailers
                   li
-                    p #{name} - #{price}
-              a(href="#" class="product-hide-retailers") &#x25B2; hide retailers
+                    .row
+                      .col-md-3.h3 #{name} 
+                      .col-md-3.h3 #{price}
+              p
+                a.btn.btn-default.width150(href="#" class="product-hide-retailers") &#x25B2; hide retailers
           else
             if reviews
               p
-                a(href="#" class="product-show-comments") &#x25BC; show comments
+                a.btn.btn-default.width150(href="#" class="product-show-comments") &#x25BC; show comments
             else
-              em No reviews yet
-
-            if retailers
               p
-                a(href="#" class="product-show-retailers") &#x25BC; show retailers
+                em No reviews yet
+
+            if productretailers
+              p
+                a.btn.btn-default.width150(href="#" class="product-show-retailers") &#x25BC; show retailers
             else
-              em No retailers yet
+              p
+                em No retailers yet
 
           if reviewing
             .highlight
@@ -68,13 +78,13 @@ template(name="product")
                 .form-group
                   input.form-control(name="price" type="textarea" placeholder="Price")
                 .form-group              
-                  select.form-control(name="retailer")
+                  select.form-control(name="retailer_id")
                     each retailers
-                      option #{name}  
+                      option(value="#{_id}") #{name}  
                 button.btn.btn-success(type="submit") Submit
                 button.btn.btn-danger.cancel(type="cancel") Cancel
           else
             .form-group
-              button.product-comment.btn.btn-primary add comment
-              button.product-retailer.btn.btn-primary assign to retailer
+              button.product-comment.btn.btn-primary.width150 add comment
+              button.product-retailer.btn.btn-primary.width150 assign to retailer
         .clearfix
