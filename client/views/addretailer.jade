@@ -4,17 +4,15 @@ template(name="addretailer")
       h2 Add new retailer!          
       hr.star-light
 
-  .highlight
+  .row
     form.form-inline.form-create
-      .form-group
-        label(for='inputname')
+      .col-md-6.col-md-offset-3.highlight
         input#inputname.form-control(
           name='name',
           type='text', 
           placeholder='retailer name')
     
-      button.btn.btn-success(type="submit") 
-        .glyphicon.glyphicon-plus ADD RETAILER
+        button.btn.btn-success(type="submit") add retailer
 
 
 

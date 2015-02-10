@@ -6,9 +6,11 @@ Template.addproduct.events
     e.preventDefault()
     name = tpl.$("input[name='name']").val()
     category = tpl.$("select[name='category_id']").val()
-    filename = Session.get('fileupload').url
-    console.log Session.get('fileupload')
-    console.log filename
+    filename =
+      if Session.get('fileupload')
+        Session.get('fileupload').url
+      else
+        ""
     if name.length && category
       Meteor.call('addProduct', name, category, filename)
  
