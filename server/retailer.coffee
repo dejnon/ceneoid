@@ -5,8 +5,6 @@ Meteor.methods
       _id: retailer._id,
       name: retailer.name,
       price: price
-    console.log retailer
-    console.log retailer_summary
     Products.update(
       { '_id': product_id }, 
       { $addToSet: { 'retailers': retailer_summary } })

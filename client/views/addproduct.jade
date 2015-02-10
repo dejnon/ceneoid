@@ -22,10 +22,15 @@ template(name="addproduct")
 
         .row        
           .col-md-9.margin10
-            +upload_bootstrap(
-              fileTypes='.jpg,.png'
-              contentType='images'
-              multiple=false)
+            input(
+              name="productfile"
+              type="filepicker-dragdrop"
+              data-fp-apikey="Ac5rp34VTQ4qPTmlIII0Ez" 
+              data-fp-mimetypes="image/*" 
+              data-fp-container="modal" 
+              data-fp-maxsize="500000" 
+              data-fp-services="COMPUTER")
+
         .row        
           .col-md-9.margin10
             button.btn.btn-success(type="submit") add product

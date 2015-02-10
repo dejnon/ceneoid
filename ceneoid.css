@@ -32,3 +32,9 @@
 .width150 {
 	width: 150px !important;
 }
+
+li.notification.success {
+  position: fixed;
+  top: 0;
+  right: 0;
+}

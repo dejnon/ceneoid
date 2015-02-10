@@ -4,4 +4,5 @@ Template.addretailer.events
     name = tpl.$("input[name='name']").val()
     if name.length
       Retailers.insert({name: name})
+      Notifications.success('Success!', 'New retailer was added successfully');
 
