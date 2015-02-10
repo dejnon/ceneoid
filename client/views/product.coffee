@@ -6,7 +6,9 @@ Template.product.helpers
   reviewing: -> Session.get('reviewing') == @_id
   showreviews: -> Session.get('showreviews') == @_id
   showretailers: -> Session.get('showretailers') == @_id
-  productretailers: -> _(@retailers).sort('price') if @retailers
+  productretailers: -> 
+    if @retailers
+      _.sortBy(@retailers, (retailer) -> parseInt(retailer.price, 10))
   retailers: -> Retailers.find()
 
   productreviews: ->
